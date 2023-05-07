@@ -200,7 +200,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
          [
-             InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+             InlineKeyboardButton(f'𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔', 'reqinfo'),
              
          ]
     )
@@ -1237,7 +1237,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
          [
-             InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+             InlineKeyboardButton(f'𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔', 'reqinfo'),
 
          ]
     )
