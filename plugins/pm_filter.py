@@ -611,7 +611,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
 
     elif query.data == "reqinfo":
-        await query.answer(url=f"https://t.me/tutorials0128/16")
+        await query.answer(url=f"https://t.me/tutorials0128")
 
  
     elif query.data == "surprise":
