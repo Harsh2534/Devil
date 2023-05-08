@@ -152,7 +152,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"[{get_size(file.file_size)}] {file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"[{get_size(file.file_size)}] {file.file_caption}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -161,7 +161,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"{file.file_caption}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
@@ -175,7 +175,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                        text=f"[{get_size(file.file_size)}] {file.file_caption}", callback_data=f'files#{file.file_id}'
                     ),
                 ]
                 for file in files
@@ -184,7 +184,7 @@ async def next_page(bot, query):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
+                        text=f"{file.file_caption}", callback_data=f'files#{file.file_id}'
                     ),
                     InlineKeyboardButton(
                         text=f"{get_size(file.file_size)}",
@@ -488,7 +488,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 logger.exception(e)
             f_caption = f_caption
         if f_caption is None:
-            f_caption = f"{files.file_name}"
+            f_caption = f"{files.file_caption}"
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -553,7 +553,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if not files_:
             return await query.answer('No such file exist.')
         files = files_[0]
-        title = files.file_name
+        title = files.file_caption
         size = get_size(files.file_size)
         f_caption = files.caption
         if CUSTOM_FILE_CAPTION:
@@ -1187,7 +1187,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"[{get_size(file.file_size)}] {file.file_name}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                        text=f"[{get_size(file.file_size)}] {file.file_caption}", url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                 ]
                 for file in files
@@ -1196,7 +1196,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}",
+                        text=f"{file.file_caption}",
                         url=await get_shortlink(message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                     ),
                     InlineKeyboardButton(
@@ -1211,7 +1211,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                        text=f"[{get_size(file.file_size)}] {file.file_caption}", callback_data=f'{pre}#{file.file_id}'
                     ),
                 ]
                 for file in files
@@ -1220,7 +1220,7 @@ async def auto_filter(client, msg, spoll=False):
             btn = [
                 [
                     InlineKeyboardButton(
-                        text=f"{file.file_name}",
+                        text=f"{file.file_caption}",
                         callback_data=f'{pre}#{file.file_id}',
                     ),
                     InlineKeyboardButton(
@@ -1254,7 +1254,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text="𝐍𝐎 𝐌𝐎𝐑𝐄 𝐏𝐀𝐆𝐄𝐒 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄", callback_data="pages")]
         )
-    imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
+    imdb = await get_poster(search, file=(files[0]).file_caption) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:
         cap = TEMPLATE.format(
