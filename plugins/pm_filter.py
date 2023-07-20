@@ -200,7 +200,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
          [
-             InlineKeyboardButton("𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔", url="https://t.me/tutorials0128/17"),
+             InlineKeyboardButton("𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔", url="https://t.me/tutorials0128/18"),
              
          ]
     )
@@ -611,7 +611,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
 
     elif query.data == "reqinfo":
-        await query.answer(InlineKeyboardButton("𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔", url="https://t.me/tutorials0128/17"))
+        await query.answer(InlineKeyboardButton("𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔", url="https://t.me/tutorials0128/18"))
 
  
     elif query.data == "surprise":
@@ -1237,7 +1237,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
          [
-             InlineKeyboardButton("𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔", url="https://t.me/tutorials0128/17"),
+             InlineKeyboardButton("𝙷𝚘𝚠 𝚃𝚘 𝙾𝚙𝚎𝚗 𝙻𝚒𝚗𝚔", url="https://t.me/tutorials0128/18"),
 
          ]
     )
